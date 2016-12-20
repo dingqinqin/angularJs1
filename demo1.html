@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-controller="mycont">
+		<ul>
+			<li ng-repeat="pro in provinces">
+					{{pro.name}}
+				<ul>
+					<li ng-repeat="city in pro.cities">
+						{{city.name}}
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript" src="lib/angular.min.js" ></script>
+	<script>
+		var app=angular.module("myapp",[]);
+		app.controller("mycont",function($scope){
+			var provinces=[
+				{
+					name:"浙江",
+					cities:[
+						{name:"金华"}	,
+						{name:"温州"}	,
+						{name:"杭州"}	
+					]
+				},
+					{
+					name:"甘肃",
+					cities:[
+						{name:"武威"}	,
+						{name:"金昌"},
+						{name:"张掖"}	
+					]
+				},
+					{
+					name:"苏州",
+					cities:[
+						{name:"南京"},
+						{name:"徐州"}	,
+						{name:"连云港"}
+					]
+				}
+			];
+			$scope.provinces=provinces;
+		});
+		
+	</script>
+</html>

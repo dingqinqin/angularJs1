@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+	</head>
+	<body ng-controller="myCtrl">
+		{{user.username+"是个"+user.sex+"孩,今年"+user.age+"岁,手机号"+user.tel}}
+		
+	</body>
+	<script src="lib/angular.min.js"></script>
+	<script>
+		var app=angular.module("myApp",[]);
+		app.controller("myCtrl",function($scope){
+			$scope.user={
+				"userName":"dqq",
+				"sex":"女",
+				"tel":18119307198,
+				"age":12,
+			}
+			$scope.baowen={
+				"name":"赵航",
+				"sex":"男",
+				"age":20,
+				"tel":18809312502,
+			}
+		});
+		
+	</script>
+</html>
